@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schedule Your Service | Beauty - Bridal Services</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="assets/logo.png" width="50" height="50" alt="Beauty logo" class="logo-img">
+      <div class="brand-text">
+        <span class="brand-name">Beauty</span>
+        <small class="brand-tagline">Shaping your beauty</small>
+      </div>
+    </a>
+
+    <ul class="nav-menu">
+      <li><a href="index.html" class="nav-link">Home</a></li>
+      <li><a href="services.html" class="nav-link">Services</a></li>
+      <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+      <li><a href="#about" class="nav-link">About Us</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+
+    <div class="nav-right">
+      <div class="search-box">
+        <input type="search" placeholder="Search" class="search-input" />
+        <i class="bi bi-search search-icon"></i>
+      </div>
+      <button class="user-icon-btn">
+        <i class="bi bi-person-circle"></i>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Booking Page -->
+<section class="booking-page">
+  <div class="booking-container">
+    <a href="packages.html" class="back-link">
+      <i class="bi bi-chevron-left"></i> Back
+    </a>
+
+    <h1 class="booking-page-title">Schedule Your Service</h1>
+    <p class="booking-subtitle">Check Out Our Availability And Book The Date And Time That Works For You</p>
+
+    <div class="booking-content">
+      <!-- Left Section: Date and Time Selection -->
+      <div class="booking-section">
+        <div class="section-tabs">
+          <span class="section-tab active">Select A Date And Time</span>
+          <span class="section-tab">India Standard Time (IST)</span>
+        </div>
+
+        <div class="availability-info">
+          <p class="availability-date">Availability For Sunday 11 May</p>
+          <p class="availability-status">No Availability</p>
+          <a href="#" class="btn-check-availability" id="checkAvailabilityBtn">Check Next Availability</a>
+        </div>
+      </div>
+
+      <!-- Right Section: Service Details -->
+      <div class="booking-section">
+        <div class="section-header">
+          <h3>Service Details</h3>
+        </div>
+
+        <div class="service-details-content">
+          <h4 class="service-detail-name" id="serviceName">Bridal Makeup Luxury Package</h4>
+          <p class="service-detail-price" id="servicePrice">Rs 25000 Negotiable</p>
+          <button class="btn-request-book" disabled>Request To Book</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-content">
+    <div class="footer-column">
+      <h3 class="footer-heading">Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="services.html">Services</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3 class="footer-heading">Services</h3>
+      <ul class="footer-links">
+        <li><a href="#">Mission</a></li>
+        <li><a href="#">Integrations</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Pricing</a></li>
+        <li><a href="#">Industries</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3 class="footer-heading">Other Links</h3>
+      <ul class="footer-links">
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Testimonials</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Cancellation and Refund</a></li>
+        <li><a href="#">Terms of Service</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-column">
+      <h3 class="footer-heading">Contact Info</h3>
+      <ul class="footer-contact">
+        <li>
+          <i class="bi bi-geo-alt-fill"></i>
+          <span>8-2-686/DR/9, Banjara Hills, Hyderabad, Telangana 500034</span>
+        </li>
+        <li>
+          <i class="bi bi-telephone-fill"></i>
+          <span>+91-869-011-0011</span>
+        </li>
+        <li>
+          <i class="bi bi-envelope-fill"></i>
+          <span>bookingmyna@gmail.com</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2008-2025 Makeover booking service. All Rights Reserved</p>
+    <div class="social-icons">
+      <a href="#" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+      <a href="#" aria-label="Twitter"><i class="bi bi-twitter"></i></a>
+      <a href="#" aria-label="Twitter X"><i class="bi bi-twitter-x"></i></a>
+      <a href="#" aria-label="Facebook"><i class="bi bi-facebook"></i></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Get service details from URL parameters
+const urlParams = new URLSearchParams(window.location.search);
+const serviceName = urlParams.get('service');
+const servicePrice = urlParams.get('price');
+
+if (serviceName) {
+  document.getElementById('serviceName').textContent = serviceName;
+}
+if (servicePrice) {
+  document.getElementById('servicePrice').textContent = servicePrice;
+}
+
+// Handle Check Next Availability button click
+document.getElementById('checkAvailabilityBtn').addEventListener('click', function(e) {
+  e.preventDefault();
+  // Pass service details to availability page
+  const params = new URLSearchParams();
+  if (serviceName) params.append('service', serviceName);
+  if (servicePrice) params.append('price', servicePrice);
+  window.location.href = 'availability.html?' + params.toString();
+});
+</script>
+</body>
+</html>

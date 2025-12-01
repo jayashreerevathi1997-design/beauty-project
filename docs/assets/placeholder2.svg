@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
+  <rect width="800" height="500" fill="#eef7fb" />
+  <rect x="60" y="60" width="680" height="380" rx="18" fill="#dff3ff" />
+  <text x="120" y="270" font-family="Poppins, Arial, sans-serif" font-size="32" fill="#0288d1">Portfolio Placeholder</text>
+</svg>
